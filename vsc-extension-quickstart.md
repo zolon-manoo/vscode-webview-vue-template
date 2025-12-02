@@ -25,15 +25,6 @@
 
 * 当您打开文件 `node_modules/@types/vscode/index.d.ts` 时，可以打开完整的 API 集合。
 
-## 运行测试
-
-* 打开调试视图 (`Ctrl+Shift+D` 或 Mac 上的 `Cmd+Shift+D`)，从启动配置下拉菜单中选择 `Extension Tests`。
-* 按 `F5` 在加载了您的扩展的新窗口中运行测试。
-* 在调试控制台中查看测试结果的输出。
-* 对 `src/test/suite/extension.test.ts` 进行更改或在 `test/suite` 文件夹内创建新的测试文件。
-  * 提供的测试运行器只会考虑匹配名称模式 `**.test.ts` 的文件。
-  * 您可以在 `test` 文件夹内创建文件夹，以任意方式组织您的测试。
-
 ## 更进一步
 
 * [遵循 UX 指南](https://code.visualstudio.com/api/ux-guidelines/overview) 创建与 VS Code 原生界面和模式无缝集成的扩展。
