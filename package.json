@@ -1,65 +1,41 @@
 {
-  "name": "vue3baseextension",
-  "displayName": "vue3BaseExtension",
-  "description": "",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.74.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "main": "./dist/extension.js",
+  "name": "vue-webview-workspace",
+  "version": "1.0.0",
+  "description": "VS Code Webview Vue Template split into pnpm workspace",
+  "private": true,
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "concurrently \"tsc -p ./tsconfig.extension.json --skipLibCheck\" \"vite build\" \"tailwindcss -i ./src/assets/css/main.css -o ./dist/output.css\"",
-    "watch": "concurrently \"tsc -w -p ./tsconfig.extension.json --skipLibCheck\" \"vite build --watch\" \"tailwindcss -i ./src/assets/css/main.css -o ./dist/output.css --watch\"",
-    "lint": "eslint \"src/**/*.{ts,vue}\" --config eslint.config.cjs",
-    "typecheck": "vue-tsc --noEmit --skipLibCheck"
+    "build": "pnpm -r build",
+    "dev": "pnpm -r --parallel dev",
+    "compile": "pnpm -r compile",
+    "watch": "pnpm -r --parallel watch",
+    "lint": "eslint \"packages/**/*.{ts,vue}\"",
+    "typecheck": "pnpm -r typecheck",
+    "build:full": "./scripts/build.sh",
+    "dev:full": "./scripts/dev.sh"
   },
-  "contributes": {
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "vue-3-base-view",
-          "title": "Vue 3 Base Extension",
-          "icon": "src/assets/img/default.png"
-        }
-      ]
-    },
-    "views": {
-      "vue-3-base-view": [
-        {
-          "type": "webview",
-          "id": "base-view-sidebar",
-          "name": "Vue 3 Base Extension",
-          "icon": "src/assets/img/default.png",
-          "contextualTitle": "Vue 3 Base Extension"
-        }
-      ]
-    }
-  },
-  "dependencies": {
-    "@intlify/unplugin-vue-i18n": "^0.8.1",
-    "vue": "^3.2.45",
-    "vue-i18n": "9"
+  "keywords": [
+    "vscode",
+    "extension",
+    "webview",
+    "vue",
+    "pnpm",
+    "workspace"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "pnpm": ">=7.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.39.1",
     "@iconify-json/mdi": "^1.1.39",
     "@types/node": "^18.11.17",
-    "@types/vscode": "^1.73.0",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
-    "@vitejs/plugin-vue": "^2.3.3",
-    "concurrently": "^7.6.0",
     "eslint": "^8.57.1",
     "eslint-plugin-vue": "^9.8.0",
     "tailwindcss": "^3.2.4",
-    "typescript": "^4.8.4",
-    "unplugin-icons": "^0.14.15",
-    "vite": "^2.9.14",
-    "vue-tsc": "^0.40.6"
+    "typescript": "^4.8.4"
   }
 }

@@ -1,5 +1,7 @@
 .vscode/**
-src/**
+packages/extension/src/**
+packages/ui/src/**
+packages/shared/src/**
 .gitignore
 .yarnrc
 vsc-extension-quickstart.md

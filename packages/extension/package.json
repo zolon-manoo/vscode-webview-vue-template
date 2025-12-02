@@ -1,0 +1,55 @@
+{
+  "name": "@vue-webview/extension",
+  "version": "1.0.0",
+  "description": "VS Code extension for Vue Webview Workspace",
+  "main": "./dist/extension.js",
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./tsconfig.json",
+    "watch": "tsc -w -p ./tsconfig.json"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vue-webview-sidebar",
+          "title": "Vue Webview Workspace",
+          "icon": "resources/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "vue-webview-sidebar": [
+        {
+          "type": "webview",
+          "id": "base-view-sidebar",
+          "name": "Vue Webview Workspace",
+          "icon": "resources/icon.png",
+          "contextualTitle": "Vue Webview Workspace"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "vue-webview-workspace.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "dependencies": {
+    "@vue-webview/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "typescript": "^4.8.4"
+  }
+}

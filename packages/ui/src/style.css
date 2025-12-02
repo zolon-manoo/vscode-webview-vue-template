@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --container-paddding: 20px;
+  --container-padding: 20px;
   --input-padding-vertical: 6px;
   --input-padding-horizontal: 4px;
   --input-margin-vertical: 4px;
@@ -11,16 +11,17 @@
 }
 
 body {
-  padding: 0 var(--container-paddding);
+  padding: 0 var(--container-padding);
   color: var(--vscode-foreground);
-  font-size: var(--vscode-font-size);
-  font-weight: var(--vscode-font-weight);
+  background-color: var(--vscode-editor-background);
   font-family: var(--vscode-font-family);
+  font-weight: var(--vscode-font-weight);
+  font-size: var(--vscode-font-size);
 }
 
 ol,
 ul {
-  padding-left: var(--container-paddding);
+  padding-left: var(--container-padding);
 }
 
 body > *,
@@ -43,8 +44,9 @@ a:active {
 }
 
 code {
-  font-size: var(--vscode-editor-font-size);
   font-family: var(--vscode-editor-font-family);
+  font-size: var(--vscode-editor-font-size);
+  color: var(--vscode-textPreformat-foreground);
 }
 
 button {
@@ -67,16 +69,7 @@ button:focus {
   outline-color: var(--vscode-focusBorder);
 }
 
-button.secondary {
-  color: var(--vscode-button-secondaryForeground);
-  background: var(--vscode-button-secondaryBackground);
-}
-
-button.secondary:hover {
-  background: var(--vscode-button-secondaryHoverBackground);
-}
-
-input:not([type="checkbox"]),
+input:not([type='checkbox']),
 textarea {
   display: block;
   width: 100%;
@@ -86,9 +79,5 @@ textarea {
   color: var(--vscode-input-foreground);
   outline-color: var(--vscode-input-border);
   background-color: var(--vscode-input-background);
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: var(--vscode-input-placeholderForeground);
+  border: 1px solid var(--vscode-sideBarSectionHeader-border);
 }
