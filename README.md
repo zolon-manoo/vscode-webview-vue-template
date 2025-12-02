@@ -14,9 +14,6 @@
 	- [x] VSCode 默认样式的 Tailwind 配置
 - [x] 通过 unplugin 使用 Iconify
 - [x] 通过 unplugin 使用 I18n
-- [x] Vitest
-	- [x] Vitest UI
-- [x] Testing Library
 - [x] 良好的代码检查
 - [x] CircleCI
 - [x] 基础的 VSCode API 消息示例

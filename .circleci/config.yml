@@ -57,20 +57,6 @@ jobs:
           name: 'Verify code quality and formatting'
           command: yarn lint
 
-  test:
-    docker:
-      - image: cimg/node:16.16.0
-
-    steps:
-      - checkout
-
-      - attach_workspace:
-          at: .
-
-      - run:
-          name: 'Run unit tests'
-          command: yarn test
-
   typecheck:
     docker:
       - image: cimg/node:16.16.0
@@ -97,10 +83,6 @@ workflows:
             - setup
 
       - lint:
-          requires:
-            - build
-
-      - test:
           requires:
             - build
 

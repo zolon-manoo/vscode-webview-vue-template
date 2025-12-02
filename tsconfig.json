@@ -18,9 +18,7 @@
     "skipLibCheck": true,
     "noEmit": true,
     "types": [
-      "jest",
       "node",
-      "vitest",
       "vite/client",
       "unplugin-icons/types/vue",
       "@intlify/unplugin-vue-i18n/messages"
