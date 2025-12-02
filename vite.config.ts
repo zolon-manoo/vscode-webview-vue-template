@@ -3,7 +3,7 @@ import Icons from 'unplugin-icons/vite'
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import { defineConfig } from 'vite'
 
-module.exports = defineConfig({
+export default defineConfig({
 	plugins: [
 		vue({ customElement: true }),
 		Icons({
