@@ -47,10 +47,10 @@ export class BaseViewProvider implements vscode.WebviewViewProvider {
     
     private _getHtmlForWebview(webview: vscode.Webview) {
         // Get the local path to main script run in the webview, then convert it to a uri we can use in the webview.
-        const scriptUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'packages', 'ui', 'dist', 'assets', 'index.js'));
+        const scriptUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'dist', 'assets', 'index.js'));
         
         // Do the same for the stylesheet.
-        const styleResetUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'packages', 'ui', 'dist', 'assets', 'index.css'));
+        const styleResetUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'dist', 'assets', 'index.css'));
         
         // Use a nonce to only allow a specific script to be run.
         const nonce = getNonce();
