@@ -1,20 +1,17 @@
-import js from "@eslint/js";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import parser from "vue-eslint-parser";
-import vuePlugin from "eslint-plugin-vue";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import { FlatCompat } from "@eslint/eslintrc";
+const js = require("@eslint/js");
+const typescriptEslint = require("@typescript-eslint/eslint-plugin");
+const parser = require("vue-eslint-parser");
+const vuePlugin = require("eslint-plugin-vue");
+const path = require("node:path");
+const { FlatCompat } = require("@eslint/eslintrc");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
     baseDirectory: __dirname,
     recommendedConfig: js.configs.recommended,
     allConfig: js.configs.all
 });
 
-export default [
+module.exports = [
   {
     ignores: ["**/dist", "**/*.d.ts"]
   },
