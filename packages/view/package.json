@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Vue UI for Vue Webview Workspace",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "typecheck": "vue-tsc --noEmit"
+    "lint": "eslint \"src/**/*.{ts,vue}\"",
+    "compile": "vue-tsc --noEmit && vite build",
+    "watch": "vue-tsc --noEmit && vite build --watch",
+    "dev": "vite"
   },
   "keywords": [
     "vue",

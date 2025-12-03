@@ -4,11 +4,9 @@
   "description": "VS Code extension for Vue Webview Workspace",
   "main": "./dist/extension.js",
   "scripts": {
-    "vscode:prepublish": "pnpm run compile",
-    "compile": "tsc -p ./tsconfig.json",
-    "watch": "tsc -w -p ./tsconfig.json",
-    "postcompile": "pnpm run copy-ui-assets",
-    "copy-ui-assets": "mkdir -p dist && cp -r ../webview-sidebar/dist/* dist/"
+    "lint": "eslint \"src/**/*.{ts,vue}\"",
+    "compile": "tsc -p ./tsconfig.json --skipLibCheck",
+    "watch": "tsc -w -p ./tsconfig.json --skipLibCheck"
   },
   "engines": {
     "vscode": "^1.74.0"

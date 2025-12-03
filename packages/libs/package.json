@@ -18,8 +18,9 @@
     "src"
   ],
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc -w"
+    "lint": "eslint \"src/**/*.{ts,vue}\"",
+    "compile": "tsc --skipLibCheck",
+    "watch": "tsc -w --skipLibCheck"
   },
   "keywords": [
     "vscode",
