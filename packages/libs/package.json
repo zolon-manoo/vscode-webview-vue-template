@@ -3,21 +3,16 @@
   "version": "1.0.0",
   "description": "Shared libs code for Vue Webview Workspace",
   "main": "./dist/index.js",
-  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js",
+      "default": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    },
-    "./src/*": "./src/*"
+    }
   },
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": [ "dist" ],
   "scripts": {
+    "prepublishOnly": "pnpm run compile",
     "lint": "eslint \"src/**/*.{ts,vue}\"",
     "compile": "tsc -p ./tsconfig.json --skipLibCheck",
     "watch": "tsc -w -p ./tsconfig.json --skipLibCheck"

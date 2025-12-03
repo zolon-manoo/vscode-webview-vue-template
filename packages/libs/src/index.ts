@@ -2,3 +2,4 @@
 export const sharedVersion = '1.0.0'
 
 // Add shared utilities here
+export { ExtensionMessenger, WebviewMessenger, Message } from './messenger'

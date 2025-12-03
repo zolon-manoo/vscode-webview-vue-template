@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "compile": "pnpm -r compile",
-    "watch": "pnpm -r --parallel watch",
+    "watch": "concurrently \"pnpm --filter @vue-webview/view watch\" \"pnpm --filter @vue-webview/extension watch\"",
     "lint": "eslint \"packages/**/*.{ts,vue}\""
   },
   "keywords": [

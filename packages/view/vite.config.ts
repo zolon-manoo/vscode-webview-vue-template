@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Icons from 'unplugin-icons/vite'
 import { resolve } from 'path'
+import commonjs from '@rollup/plugin-commonjs';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,7 +11,8 @@ export default defineConfig({
     Icons({
       compiler: 'vue3',
       autoInstall: true,
-    })
+    }),
+    commonjs()
   ],
   resolve: {
     alias: {
@@ -25,7 +27,11 @@ export default defineConfig({
         entryFileNames: `assets/[name].js`,
         chunkFileNames: `assets/[name].js`,
         assetFileNames: `assets/[name].[ext]`
-      }
+      },
+      external: ['vscode']
+    },
+    commonjsOptions: {
+      transformMixedEsModules: true
     }
   },
   define: {
