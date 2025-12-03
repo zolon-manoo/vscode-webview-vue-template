@@ -5,7 +5,7 @@ This is a refactored version of the VS Code Webview Vue Template, organized as a
 ## Packages
 
 1. **@vue-webview/extension** - The VS Code extension
-2. **@vue-webview/ui** - The Vue 3 webview UI
+2. **@vue-webview/webview-sidebar** - The Vue 3 webview UI
 3. **@vue-webview/shared** - Shared code between the extension and webview
 
 ## Development
@@ -18,14 +18,14 @@ This is a refactored version of the VS Code Webview Vue Template, organized as a
 - Run all packages in development mode: `pnpm run dev:full`
 - Or run individual packages:
   - Extension: `pnpm run --filter @vue-webview/extension dev`
-  - UI: `pnpm run --filter @vue-webview/ui dev`
+  - UI: `pnpm run --filter @vue-webview/webview-sidebar dev`
   - Shared: `pnpm run --filter @vue-webview/shared dev`
 
 ### Building for Production
 - Build all packages: `pnpm run build:full`
 - Or build individual packages:
   - Extension: `pnpm run --filter @vue-webview/extension build`
-  - UI: `pnpm run --filter @vue-webview/ui build`
+  - UI: `pnpm run --filter @vue-webview/webview-sidebar build`
   - Shared: `pnpm run --filter @vue-webview/shared build`
 
 ## Package Details
@@ -36,7 +36,7 @@ Contains the VS Code extension code, including:
 - Webview provider
 - Message handling between extension and webview
 
-### @vue-webview/ui
+### @vue-webview/webview-sidebar
 Contains the Vue 3 webview UI, including:
 - Vue components
 - Internationalization (i18n)

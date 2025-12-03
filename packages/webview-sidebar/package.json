@@ -1,5 +1,5 @@
 {
-  "name": "@vue-webview/ui",
+  "name": "@vue-webview/webview-sidebar",
   "version": "1.0.0",
   "description": "Vue UI for Vue Webview Workspace",
   "scripts": {
