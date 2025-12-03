@@ -10,7 +10,9 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": [ "dist" ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublishOnly": "pnpm run compile",
     "lint": "eslint \"src/**/*.{ts,vue}\"",

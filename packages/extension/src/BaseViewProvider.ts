@@ -1,63 +1,65 @@
-import * as vscode from 'vscode';
-import { ResourceResolver } from './utils/pathUtils';
-import { ExtensionMessenger } from '@vue-webview/libs';
+import * as vscode from 'vscode'
+import { ResourceResolver } from './utils/pathUtils'
+import { ExtensionMessenger } from '@vue-webview/libs'
 
 export class BaseViewProvider implements vscode.WebviewViewProvider {
-	public static readonly viewType = 'base-view-sidebar';
+  public static readonly viewType = 'base-view-sidebar'
 
-	private _view?: vscode.WebviewView;
-	private _messenger?: ExtensionMessenger;
+  private _view?: vscode.WebviewView
+  private _messenger?: ExtensionMessenger
 
-	constructor(
-		private readonly resourceResolver: ResourceResolver
-	) {	}
+  constructor(private readonly resourceResolver: ResourceResolver) {}
 
-	public resolveWebviewView(
-		webviewView: vscode.WebviewView,
-		context: vscode.WebviewViewResolveContext,
-		_token: vscode.CancellationToken,
-	) {
-		this._view = webviewView;
+  public resolveWebviewView(
+    webviewView: vscode.WebviewView,
+    _context: vscode.WebviewViewResolveContext,
+    _token: vscode.CancellationToken
+  ) {
+    this._view = webviewView
 
-		webviewView.webview.options = {
-			// Allow scripts in the webview
-			enableScripts: true,
+    webviewView.webview.options = {
+      // Allow scripts in the webview
+      enableScripts: true,
 
-			localResourceRoots: [
-				this.resourceResolver.getResourceRoot()
-			]
-		};
+      localResourceRoots: [this.resourceResolver.getResourceRoot()],
+    }
 
-		webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
+    webviewView.webview.html = this._getHtmlForWebview(webviewView.webview)
 
-		// Initialize messenger
-		this._messenger = new ExtensionMessenger(webviewView);
+    // Initialize messenger
+    this._messenger = new ExtensionMessenger(webviewView)
 
-		// Handle messages from webview
-		this._messenger.onMessage(message => {
-			switch (message.command) {
-				case 'alert':
-					vscode.window.showErrorMessage(message.data);
-					return;
-				case 'info':
-					vscode.window.showInformationMessage(message.data);
-					return;
-			}
-		});
-	}
+    // Handle messages from webview
+    this._messenger.onMessage(message => {
+      switch (message.command) {
+        case 'alert':
+          vscode.window.showErrorMessage(message.data as string)
+          return
+        case 'info':
+          vscode.window.showInformationMessage(message.data as string)
+          return
+      }
+    })
+  }
 
-	private _getHtmlForWebview(webview: vscode.Webview) {
-		// 简单方案：优先检查开发环境路径，然后回退到生产环境路径
-		const scriptUri = this.resourceResolver.getResourceUri({ module_dir: 'view', resourcePath: ['assets', 'index.js'] });
-		const styleResetUri = this.resourceResolver.getResourceUri({ module_dir: 'view', resourcePath: ['assets', 'index.css'] });	
+  private _getHtmlForWebview(webview: vscode.Webview) {
+    // 简单方案：优先检查开发环境路径，然后回退到生产环境路径
+    const scriptUri = this.resourceResolver.getResourceUri({
+      module_dir: 'view',
+      resourcePath: ['assets', 'index.js'],
+    })
+    const styleResetUri = this.resourceResolver.getResourceUri({
+      module_dir: 'view',
+      resourcePath: ['assets', 'index.css'],
+    })
 
-		const webviewScriptUri = webview.asWebviewUri(scriptUri);
-		const webviewStyleUri = webview.asWebviewUri(styleResetUri);
+    const webviewScriptUri = webview.asWebviewUri(scriptUri)
+    const webviewStyleUri = webview.asWebviewUri(styleResetUri)
 
-		// Use a nonce to only allow a specific script to be run.
-		const nonce = getNonce();
+    // Use a nonce to only allow a specific script to be run.
+    const nonce = getNonce()
 
-		return `<!DOCTYPE html>
+    return `<!DOCTYPE html>
 			<html lang="en">
 			<head>
 				<meta charset="UTF-8">
@@ -75,17 +77,16 @@ export class BaseViewProvider implements vscode.WebviewViewProvider {
 				<div id="app"></div>
 				<script nonce="${nonce}" src="${webviewScriptUri}"></script>
 			</body>
-			</html>`;
-	}
-
-	
+			</html>`
+  }
 }
 
 function getNonce() {
-	let text = '';
-	const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-	for (let i = 0; i < 32; i++) {
-		text += possible.charAt(Math.floor(Math.random() * possible.length));
-	}
-	return text;
+  let text = ''
+  const possible =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  for (let i = 0; i < 32; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length))
+  }
+  return text
 }
