@@ -1,7 +1,7 @@
 {
-  "name": "@vue-webview/shared",
+  "name": "@vue-webview/libs",
   "version": "1.0.0",
-  "description": "Shared code for Vue Webview Workspace",
+  "description": "Shared libs code for Vue Webview Workspace",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

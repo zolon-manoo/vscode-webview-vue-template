@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { ExtensionMessenger } from '@vue-webview/shared/src/messenger';
+import { ExtensionMessenger } from '@vue-webview/libs/src/messenger';
 
 export class BaseViewProvider implements vscode.WebviewViewProvider {
     public static readonly viewType = 'base-view-sidebar';

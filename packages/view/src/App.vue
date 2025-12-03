@@ -18,7 +18,7 @@
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 // @ts-ignore
-import { WebviewMessenger } from '@vue-webview/shared/src/messenger'
+import { WebviewMessenger } from '@vue-webview/libs/src/messenger'
 
 const { locale } = useI18n()
 const message = ref('')
