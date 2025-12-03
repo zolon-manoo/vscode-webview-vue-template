@@ -19,8 +19,8 @@
   ],
   "scripts": {
     "lint": "eslint \"src/**/*.{ts,vue}\"",
-    "compile": "tsc --skipLibCheck",
-    "watch": "tsc -w --skipLibCheck"
+    "compile": "tsc -p ./tsconfig.json --skipLibCheck",
+    "watch": "tsc -w -p ./tsconfig.json --skipLibCheck"
   },
   "keywords": [
     "vscode",
