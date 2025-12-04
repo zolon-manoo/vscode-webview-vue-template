@@ -18,12 +18,7 @@
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "noEmit": true,
-    "types": [
-      "node",
-      "vite/client",
-      "unplugin-icons/types/vue",
-      "@intlify/unplugin-vue-i18n/messages"
-    ]
+    "types": ["node", "vite/client", "unplugin-icons/types/vue", "@intlify/unplugin-vue-i18n/messages"]
   },
   "include": ["src/**/*", "src/**/*.json"],
   "exclude": ["node_modules", "dist"]

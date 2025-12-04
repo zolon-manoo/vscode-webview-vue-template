@@ -9,34 +9,20 @@ import { ResourceResolver } from './utils/pathUtils'
 export function activate(context: vscode.ExtensionContext) {
   // Use the console to output diagnostic information (console.log) and errors (console.error)
   // This line of code will only be executed once when your extension is activated
-  console.log(
-    '>>> Congratulations, your extension "vue-webview-workspace" is now active!'
-  )
-  const resourceResolver = new ResourceResolver(
-    context.extensionUri,
-    context.extensionMode
-  )
+  console.log('Congratulations, your extension "vue-webview-workspace" is now active!')
+  const resourceResolver = new ResourceResolver(context.extensionUri, context.extensionMode)
+
   const provider = new BaseViewProvider(resourceResolver)
-  context.subscriptions.push(
-    vscode.window.registerWebviewViewProvider(
-      BaseViewProvider.viewType,
-      provider
-    )
-  )
+  context.subscriptions.push(vscode.window.registerWebviewViewProvider('base-view-sidebar', provider))
 
   // The command has been defined in the package.json file
   // Now provide the implementation of the command with registerCommand
   // The commandId parameter must match the command field in package.json
-  const disposable = vscode.commands.registerCommand(
-    'vue-webview-workspace.helloWorld',
-    () => {
-      // The code you place here will be executed every time your command is executed
-      // Display a message box to the user
-      vscode.window.showInformationMessage(
-        'Hello World from Vue Webview Workspace!'
-      )
-    }
-  )
+  const disposable = vscode.commands.registerCommand('vue-webview-workspace.helloWorld', () => {
+    // The code you place here will be executed every time your command is executed
+    // Display a message box to the user
+    vscode.window.showInformationMessage('Hello World from Vue Webview Workspace!')
+  })
   context.subscriptions.push(disposable)
 }
 

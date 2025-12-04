@@ -3,8 +3,6 @@ import { ResourceResolver } from './utils/pathUtils'
 import { ExtensionMessenger } from '@vue-webview/libs'
 
 export class BaseViewProvider implements vscode.WebviewViewProvider {
-  public static readonly viewType = 'base-view-sidebar'
-
   private _view?: vscode.WebviewView
   private _messenger?: ExtensionMessenger
 
@@ -12,7 +10,7 @@ export class BaseViewProvider implements vscode.WebviewViewProvider {
 
   public resolveWebviewView(
     webviewView: vscode.WebviewView,
-    _context: vscode.WebviewViewResolveContext,
+    _context: vscode.WebviewViewResolveContext<unknown>,
     _token: vscode.CancellationToken
   ) {
     this._view = webviewView
@@ -83,8 +81,7 @@ export class BaseViewProvider implements vscode.WebviewViewProvider {
 
 function getNonce() {
   let text = ''
-  const possible =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
   for (let i = 0; i < 32; i++) {
     text += possible.charAt(Math.floor(Math.random() * possible.length))
   }

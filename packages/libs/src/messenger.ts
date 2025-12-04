@@ -50,10 +50,7 @@ export class WebviewMessenger implements Messenger {
 }
 
 // Utility function to create a messenger based on environment
-export function createMessenger(
-  type: 'extension' | 'webview',
-  panel?: WebviewPanel
-): Messenger {
+export function createMessenger(type: 'extension' | 'webview', panel?: WebviewPanel): Messenger {
   if (type === 'extension' && panel) {
     return new ExtensionMessenger(panel)
   } else {
