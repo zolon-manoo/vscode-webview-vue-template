@@ -6,10 +6,10 @@
   "scripts": {
     "clean": "pnpm -r clean",
     "compile": "pnpm -r clean && pnpm -r compile",
-    "watch": "node scripts/watch.js",
+    "watch": "node scripts/watch.mjs",
     "lint": "npm run format && eslint \"packages/**/*.{ts,vue}\"",
     "lint:fix": "npm run format && eslint \"packages/**/*.{ts,vue}\" --fix",
-    "format": "prettier --write \"packages/**/*.{ts,vue,json,md}\" \"scripts/**/*.js\""
+    "format": "prettier --write \"packages/**/*.{ts,vue,json,md}\" \"scripts/**/*.mjs\""
   },
   "keywords": [
     "vscode",
