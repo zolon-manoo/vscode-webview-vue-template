@@ -6,7 +6,8 @@
     "lint": "eslint \"src/**/*.{ts,vue}\"",
     "compile": "vue-tsc --noEmit && vite build",
     "watch": "vite build --watch",
-    "dev": "vite"
+    "dev": "vite",
+    "clean": "rm -rf ./dist"
   },
   "keywords": [
     "vue",

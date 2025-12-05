@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Icons from 'unplugin-icons/vite'
-import { resolve } from 'path'
+import path, { resolve } from 'path'
 import commonjs from '@rollup/plugin-commonjs'
 
 // https://vitejs.dev/config/
@@ -22,6 +22,11 @@ export default defineConfig({
   build: {
     outDir: './dist',
     emptyOutDir: true,
+    lib: {
+      entry: path.resolve(__dirname, 'src/index.ts'),
+      name: 'index.js',
+      formats: ['es'],
+    },
     rollupOptions: {
       output: {
         entryFileNames: `assets/[name].js`,

@@ -6,7 +6,8 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
   },
@@ -17,7 +18,8 @@
     "prepublishOnly": "pnpm run compile",
     "lint": "eslint \"src/**/*.{ts,vue}\"",
     "compile": "tsc -p ./tsconfig.json --skipLibCheck",
-    "watch": "tsc -w -p ./tsconfig.json --skipLibCheck"
+    "watch": "tsc -w -p ./tsconfig.json --skipLibCheck",
+    "clean": "rm -rf ./dist"
   },
   "keywords": [
     "vscode",

@@ -4,11 +4,12 @@
   "description": "VS Code Webview Vue Template split into pnpm workspace",
   "private": true,
   "scripts": {
-    "compile": "pnpm -r compile",
-    "watch": "concurrently \"pnpm --filter @vue-webview/view watch\" \"pnpm --filter @vue-webview/extension watch\"",
+    "clean": "pnpm -r clean",
+    "compile": "pnpm -r clean && pnpm -r compile",
+    "watch": "node scripts/watch.js",
     "lint": "npm run format && eslint \"packages/**/*.{ts,vue}\"",
     "lint:fix": "npm run format && eslint \"packages/**/*.{ts,vue}\" --fix",
-    "format": "prettier --write \"packages/**/*.{ts,vue,json,md}\""
+    "format": "prettier --write \"packages/**/*.{ts,vue,json,md}\" \"scripts/**/*.js\""
   },
   "keywords": [
     "vscode",

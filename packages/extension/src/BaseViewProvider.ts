@@ -48,7 +48,7 @@ export class BaseViewProvider implements vscode.WebviewViewProvider {
     })
     const styleResetUri = this.resourceResolver.getResourceUri({
       module_dir: 'view',
-      resourcePath: ['assets', 'index.css'],
+      resourcePath: ['assets', 'style.css'],
     })
 
     const webviewScriptUri = webview.asWebviewUri(scriptUri)
