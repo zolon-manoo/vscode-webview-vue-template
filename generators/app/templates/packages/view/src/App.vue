@@ -16,7 +16,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { WebviewMessenger } from '@vue-webview/libs'
+import { WebviewMessenger } from '@<%= extensionName %>/libs'
 
 const { locale } = useI18n()
 const message = ref('')

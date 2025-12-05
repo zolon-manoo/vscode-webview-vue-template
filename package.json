@@ -1,43 +1,80 @@
 {
-  "name": "vue-webview-workspace",
-  "version": "1.0.0",
-  "description": "VS Code Webview Vue Template split into pnpm workspace",
-  "private": true,
-  "scripts": {
-    "clean": "pnpm -r clean",
-    "compile": "pnpm -r clean && pnpm -r compile",
-    "watch": "node scripts/watch.mjs",
-    "lint": "npm run format && eslint \"packages/**/*.{ts,vue}\"",
-    "lint:fix": "npm run format && eslint \"packages/**/*.{ts,vue}\" --fix",
-    "format": "prettier --write \"packages/**/*.{ts,vue,json,md}\" \"scripts/**/*.mjs\"",
-    "package": "pnpm run compile && node scripts/copy.mjs && pnpm run -F ./packages/extension package"
+  "name": "generator-vscode-webview-vue-template",
+  "version": "0.0.0",
+  "description": "vscode extension starter",
+  "homepage": "",
+  "author": {
+    "name": "manoo",
+    "email": "yangtao@in.whatspos.cn",
+    "url": ""
   },
-  "keywords": [
-    "vscode",
-    "extension",
-    "webview",
-    "vue",
-    "pnpm",
-    "workspace"
+  "files": [
+    "generators"
   ],
-  "author": "Your Name",
-  "license": "MIT",
-  "engines": {
-    "pnpm": ">=7.0.0",
-    "vscode": "^1.74.0"
-  },
+  "main": "generators/index.js",
+  "keywords": [
+    "",
+    "yeoman-generator"
+  ],
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.3",
-    "@eslint/js": "^9.39.1",
-    "@types/node": "^18.11.17",
-    "@typescript-eslint/eslint-plugin": "^5.42.0",
-    "@typescript-eslint/parser": "^5.42.0",
-    "concurrently": "^7.6.0",
-    "eslint": "^8.57.1",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.4",
-    "eslint-plugin-vue": "^9.8.0",
-    "prettier": "^3.7.4",
-    "typescript": "^4.8.4"
-  }
+    "yeoman-test": "^1.7.0",
+    "yeoman-assert": "^3.1.1",
+    "coveralls": "^3.0.7",
+    "eslint": "^6.6.0",
+    "prettier": "^1.19.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.3",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-config-xo": "^0.27.2",
+    "jest": "^26.1.0"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "dependencies": {
+    "yeoman-generator": "^3.1.1",
+    "chalk": "^2.1.0",
+    "yosay": "^2.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "jest"
+  },
+  "repository": "git@github.com:zolon-manoo/vscode-webview-vue-template.git",
+  "license": "MIT"
 }

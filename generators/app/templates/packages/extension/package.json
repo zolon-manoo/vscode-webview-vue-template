@@ -1,8 +1,8 @@
 {
-  "name": "vsc-name",
+  "name": "<%= packageName %>",
   "version": "1.0.0",
-  "publisher": "youname",
-  "description": "VS Code extension for Vue Webview Workspace",
+  "publisher": "<%= publisherName %>",
+  "description": "<%= description %>",
   "main": "./dist/extension.js",
   "scripts": {
     "lint": "eslint \"src/**/*.{ts,vue}\"",
@@ -24,33 +24,33 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "vue-webview-sidebar",
-          "title": "Vue Webview Workspace",
+          "id": "<%= viewId %>",
+          "title": "<%= displayName %>",
           "icon": "resources/icon.png"
         }
       ]
     },
     "views": {
-      "vue-webview-sidebar": [
+      "<%= viewId %>": [
         {
           "type": "webview",
-          "id": "base-view-sidebar",
-          "name": "Vue Webview Workspace",
+          "id": "<%= viewId %>",
+          "name": "<%= displayName %>",
           "icon": "resources/icon.png",
-          "contextualTitle": "Vue Webview Workspace"
+          "contextualTitle": "<%= displayName %>"
         }
       ]
     },
     "commands": [
       {
-        "command": "vue-webview-workspace.helloWorld",
-        "title": "Hello World"
+        "command": "<%= commandName %>",
+        "title": "<%= commandTitle %>"
       }
     ]
   },
   "dependencies": {
-    "@vue-webview/libs": "workspace:*",
-    "@vue-webview/view": "workspace:*"
+    "@<%= extensionName %>/libs": "workspace:*",
+    "@<%= extensionName %>/view": "workspace:*"
   },
   "devDependencies": {
     "@types/vscode": "^1.74.0",

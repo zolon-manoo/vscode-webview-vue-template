@@ -1,6 +1,2 @@
 node_modules
-.vscode
-dist
-out
-packages/*/dist
-*.log
+coverage

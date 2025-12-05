@@ -1,45 +1,38 @@
-# 基于 Vue 3 的侧边栏视图扩展
+# generator-vscode-webview-vue-template [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+> vscode extension starter
 
-这是一个基于 Vue 3 和 Vite 构建的模板，可用于创建 VSCode 侧边栏扩展。该模板通过提供结构化代码并利用 Vite 构建工具来编译和打包扩展，以便部署到 VSCode。此模板包含了快速开始构建扩展所需的一切。借助此模板，您可以利用 Vue 3 的特性和功能来构建强大且交互性强的 VSCode 扩展。
+## Installation
 
-## 包含功能：
-- [x] Typescript
-- [x] Vue 3
-- [x] Vite
-- [x] Tailwindcss
-	- [x] VSCode 默认样式的 Tailwind 配置
-- [x] 通过 unplugin 使用 Iconify
-- [x] 通过 unplugin 使用 I18n
-- [x] 良好的代码检查
-- [x] CircleCI
-- [x] 基础的 VSCode API 消息示例
+First, install [Yeoman](http://yeoman.io) and generator-vscode-webview-vue-template using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
-## 快速开始：
+```bash
+npm install -g yo
+npm install -g generator-vscode-webview-vue-template
+```
 
-安装依赖：
-- `yarn install`
+Then generate your new project:
 
-修改以下文件：
-- `package.json`
-	- 将所有的 `vue3baseextension` 替换为您的扩展 ID
-	- 将所有的 `vue-3-base-view` 替换为视图 ID
-	- 将所有的 `Vue 3 Base Extension` 替换为扩展名称
-	- 将 `default.png` 替换为您自己的扩展图标
+```bash
+yo vscode-webview-vue-template
+```
 
-运行扩展：
-- 在控制台中输入 `yarn watch`
-- 在 `extension.ts` 上按 `f5` 打开调试窗口（或在菜单中选择"调试" -> "运行扩展"）
-- 导航到左侧边栏看到的扩展图标（或打开命令面板(`Ctrl/Cmd + Shift + P`)并选择 `View: Vue 3 Base Extension` 来打开 webview 视图。）
+## Getting To Know Yeoman
 
-## 推荐的 VSCode 扩展
+ * Yeoman has a heart of gold.
+ * Yeoman is a person with feelings and opinions, but is very easy to work with.
+ * Yeoman can be too opinionated at times but is easily convinced not to be.
+ * Feel free to [learn more about Yeoman](http://yeoman.io/).
 
-- [Vitest](https://marketplace.visualstudio.com/items?itemName=ZixuanChen.vitest-explorer)
-- [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-- [I18n A11y](https://marketplace.visualstudio.com/items?itemName=Lokalise.i18n-ally)
-- [Iconify Intellisense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify)
+## License
 
-## 参考资料
-- [Webviews](https://code.visualstudio.com/api/extension-guides/webview)
-- [UX Guidelines](https://code.visualstudio.com/api/ux-guidelines/overview)
-- [Webview view API](https://code.visualstudio.com/api/references/vscode-api#WebviewView)
-- [Theme Guidelines](https://code.visualstudio.com/api/references/theme-color)
+MIT © [manoo]()
+
+
+[npm-image]: https://badge.fury.io/js/generator-vscode-webview-vue-template.svg
+[npm-url]: https://npmjs.org/package/generator-vscode-webview-vue-template
+[travis-image]: https://travis-ci.com//generator-vscode-webview-vue-template.svg?branch=master
+[travis-url]: https://travis-ci.com//generator-vscode-webview-vue-template
+[daviddm-image]: https://david-dm.org//generator-vscode-webview-vue-template.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org//generator-vscode-webview-vue-template
+[coveralls-image]: https://coveralls.io/repos//generator-vscode-webview-vue-template/badge.svg
+[coveralls-url]: https://coveralls.io/r//generator-vscode-webview-vue-template

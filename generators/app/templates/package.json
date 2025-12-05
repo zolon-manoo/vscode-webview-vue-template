@@ -1,0 +1,43 @@
+{
+  "name": "<%= extensionName %>",
+  "version": "1.0.0",
+  "description": "<%= description %>",
+  "private": true,
+  "scripts": {
+    "clean": "pnpm -r clean",
+    "compile": "pnpm -r clean && pnpm -r compile",
+    "watch": "node scripts/watch.mjs",
+    "lint": "npm run format && eslint \"packages/**/*.{ts,vue}\"",
+    "lint:fix": "npm run format && eslint \"packages/**/*.{ts,vue}\" --fix",
+    "format": "prettier --write \"packages/**/*.{ts,vue,json,md}\" \"scripts/**/*.mjs\"",
+    "package": "pnpm run compile && node scripts/copy.mjs && pnpm run -F ./packages/extension package"
+  },
+  "keywords": [
+    "vscode",
+    "extension",
+    "webview",
+    "vue",
+    "pnpm",
+    "workspace"
+  ],
+  "author": "<%= author %>",
+  "license": "MIT",
+  "engines": {
+    "pnpm": ">=7.0.0",
+    "vscode": "^1.74.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^18.11.17",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-vue": "^9.8.0",
+    "prettier": "^3.7.4",
+    "typescript": "^4.8.4"
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "name": "@vue-webview/libs",
+  "name": "@<%= extensionName %>/libs",
   "version": "1.0.0",
-  "description": "Shared libs code for Vue Webview Workspace",
+  "description": "Shared libs code for <%= displayName %>",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -24,6 +24,6 @@
     "webview",
     "shared"
   ],
-  "author": "Your Name",
+  "author": "<%= author %>",
   "license": "MIT"
 }

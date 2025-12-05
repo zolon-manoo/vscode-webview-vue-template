@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import { createI18n } from 'vue-i18n'
 import App from './App.vue'
 import './index.css'
-import { messages } from '@vue-webview/libs'
+import { messages } from '@<%= extensionName %>/libs'
 
 const i18n = createI18n({
   legacy: false,

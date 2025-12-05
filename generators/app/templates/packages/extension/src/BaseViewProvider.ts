@@ -1,6 +1,6 @@
 import * as vscode from 'vscode'
 import { ResourceResolver } from './utils/pathUtils'
-import { ExtensionMessenger } from '@vue-webview/libs'
+import { ExtensionMessenger } from '@<%= extensionName %>/libs'
 
 export class BaseViewProvider implements vscode.WebviewViewProvider {
   private _view?: vscode.WebviewView

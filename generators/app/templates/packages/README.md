@@ -4,9 +4,9 @@ This is a refactored version of the VS Code Webview Vue Template, organized as a
 
 ## Packages
 
-1. **vsc-name** - The VS Code extension
-2. **@vue-webview/view** - The Vue 3 webview UI
-3. **@vue-webview/Libs** - Shared code between the extension and webview
+1. **<%= extensionName %>** - The VS Code extension
+2. **@<%= extensionName %>/view** - The Vue 3 webview UI
+3. **@<%= extensionName %>/Libs** - Shared code between the extension and webview
 
 ## Development
 
@@ -19,17 +19,17 @@ This is a refactored version of the VS Code Webview Vue Template, organized as a
 
 - Run all packages in development mode: `pnpm run dev:full`
 - Or run individual packages:
-  - Extension: `pnpm run --filter vsc-name dev`
-  - UI: `pnpm run --filter @vue-webview/webview-sidebar dev`
-  - Libs: `pnpm run --filter @vue-webview/libs dev`
+  - Extension: `pnpm run --filter <%= extensionName %> dev`
+  - UI: `pnpm run --filter @<%= extensionName %>/view dev`
+  - Libs: `pnpm run --filter @<%= extensionName %>/libs dev`
 
 ### Building for Production
 
 - Build all packages: `pnpm run build:full`
 - Or build individual packages:
-  - Extension: `pnpm run --filter vsc-name build`
-  - UI: `pnpm run --filter @vue-webview/webview-sidebar build`
-  - Libs: `pnpm run --filter @vue-webview/libs build`
+  - Extension: `pnpm run --filter <%= extensionName %> build`
+  - UI: `pnpm run --filter @<%= extensionName %>/view build`
+  - Libs: `pnpm run --filter @<%= extensionName %>/libs build`
 
 ## Package Details
 
