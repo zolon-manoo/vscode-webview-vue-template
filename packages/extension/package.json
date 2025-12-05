@@ -1,13 +1,15 @@
 {
   "name": "vsc-name",
   "version": "1.0.0",
+  "publisher": "youname",
   "description": "VS Code extension for Vue Webview Workspace",
   "main": "./dist/extension.js",
   "scripts": {
     "lint": "eslint \"src/**/*.{ts,vue}\"",
     "compile": "tsc -p ./tsconfig.json --skipLibCheck",
     "watch": "tsc -w -p ./tsconfig.json --skipLibCheck",
-    "clean": "rm -rf ./dist"
+    "clean": "rm -rf ./dist",
+    "package": "vsce package --no-dependencies --no-git-tag-version"
   },
   "engines": {
     "vscode": "^1.74.0"
@@ -52,6 +54,7 @@
   },
   "devDependencies": {
     "@types/vscode": "^1.74.0",
+    "@vscode/vsce": "^2.15.0",
     "typescript": "^4.8.4"
   }
 }

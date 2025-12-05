@@ -9,7 +9,8 @@
     "watch": "node scripts/watch.mjs",
     "lint": "npm run format && eslint \"packages/**/*.{ts,vue}\"",
     "lint:fix": "npm run format && eslint \"packages/**/*.{ts,vue}\" --fix",
-    "format": "prettier --write \"packages/**/*.{ts,vue,json,md}\" \"scripts/**/*.mjs\""
+    "format": "prettier --write \"packages/**/*.{ts,vue,json,md}\" \"scripts/**/*.mjs\"",
+    "package": "pnpm run compile && node scripts/copy.mjs && pnpm run -F ./packages/extension package"
   },
   "keywords": [
     "vscode",
